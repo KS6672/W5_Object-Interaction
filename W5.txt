@@ -1,0 +1,63 @@
+//defining the lip class
+class Lip{
+  constructor(lipShape, lipColor, skinColor){
+    this.lipShape = lipShape;
+    this.lipColor = lipColor;
+    this.skinColor = skinColor;
+  }
+  //method for displaying the randomly chosen lip
+  displayLip(){
+    noStroke()
+    fill(this.lipColor)
+    
+    if(this.lipShape === 'THIN'){
+      arc(200-13,300,26,13,PI,0,CHORD)
+      arc(200+13,300,26,13,PI,0,CHORD)
+      arc(200,   300,50,20,0,PI,CHORD)
+      
+      fill('black')
+      textAlign(CENTER)
+      text("I might be sleepy!",180, 370, 50);
+    }
+    else if(this.lipShape === 'THICK'){
+      arc(200-15,300,30,18,PI,0,CHORD)
+      arc(200+15,300,30,18,PI,0,CHORD)
+      arc(200,   300,60,26,0,PI,CHORD)    
+      
+      fill('black')
+      textAlign(CENTER)
+      text("I'm having a good day!",180, 370, 50);
+    }
+    else if(this.lipShape === 'HAPPY'){
+      fill(this.lipColor)
+      arc(200,300-10,70,58,0, PI,PIE)
+      fill('beige')
+      arc(200,300-10,65,40,0, PI,PIE)
+      fill(this.lipColor)      
+      arc(200-17,300-7,35,18,PI,0,CHORD)
+      arc(200+17,300-7,35,18,PI,0,CHORD)
+      
+      fill('black')
+      textAlign(CENTER)
+      text("I'm Happy!",180, 370, 50)
+    }
+    else if(this.lipShape === 'SAD'){
+      noStroke()
+      fill(this.lipColor)
+      arc(200,300,70,48,PI-QUARTER_PI*0.2, 0+QUARTER_PI*0.2,PIE)
+      fill('beige')
+      arc(200,300,65,30,PI-QUARTER_PI*0.2, 0+QUARTER_PI*0.2, PIE)
+      fill(this.lipColor)
+      arc(200,300+6,70,18,PI, 0,CHORD)
+      noFill()
+      arc(200,300+6,65,8,PI, 0, PIE)
+      
+      fill('black')
+      textAlign(CENTER)
+      text("I'm not quite happy!",180, 370, 50);
+    }
+    else{
+      arc(200-13,300,26,13,PI,0,CHORD)
+      arc(200+13,300,26,13,PI,0,CHORD)
+      arc(200,   300,50,20,0,PI,CHORD)
+    }
